@@ -1,0 +1,18 @@
+@import './settings/normileze';
+@import './settings/vars';
+@import './settings/mixins';
+@import './settings/fonts';
+@import './settings/base';
+
+
+
+/* components */
+
+@import './components/hero';
+@import './components/best';
+@import './components/reviews';
+@import './components/team';
+@import './components/form';
+@import './components/contact';
+@import './components/menu';
+

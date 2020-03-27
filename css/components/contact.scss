@@ -1,0 +1,111 @@
+.contact{
+	background:transparent url('../img/contact__bg.jpg') center center no-repeat;
+	background-size: cover;
+	color: #fff;
+	font-family: Ubuntu-Light;
+	font-size: rem(14px);
+	font-weight: bold;
+	position: relative;
+}
+
+
+
+
+.footer{
+	position: absolute;
+	width: 100%;
+	height: rem(60px);
+	background:transparent url('../img/footer__bg.jpg') center center no-repeat;
+	background-size: cover;
+	bottom: 0;left: 0;
+
+	@include mobile {
+		height: rem(120px);
+	}
+}
+
+
+.footer__cont{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 100%;
+
+	@include mobile {
+		flex-direction: column;
+		justify-content: space-evenly;
+		align-items: center;
+	}
+}
+
+
+
+
+.social{
+	display:flex;
+	align-items: center;
+	justify-content: flex-end;
+
+	@include mobile {
+		width: 100%;
+		justify-content: center;
+	}
+}
+
+.footer__box{
+	width: 50%;
+	justify-content: flex-start;
+
+	@include mobile {
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+	}
+}
+
+
+.social__item{
+	padding: rem(10px);
+	transition: 0.4s;
+	color: gray;
+
+	&:hover{
+		color:#fff;
+	}
+}
+
+
+.icon-ft{
+	font-size:rem(20px);
+}
+
+.icon-vk{
+	font-size:rem(16px);
+}
+
+
+.address{
+	margin-bottom: rem(10px);
+}
+
+
+
+.phone{
+	display:flex;
+	align-items: center;
+
+	@include mobile {
+		justify-content: center;
+	}
+}
+
+
+
+.icon-phone{display:block;}
+.phone__number{
+	display:block;
+	margin-bottom: rem(3px);
+	margin-left: rem(5px);
+	color: #E45028;
+}

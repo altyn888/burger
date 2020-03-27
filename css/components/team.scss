@@ -1,0 +1,129 @@
+.team{
+	background:transparent url('../img/sec_3__bg.jpg') top center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+
+.team__wrap{
+	background-color: rgba(47,50,52,0.85);
+	width: 50%;
+	position: absolute;
+	top: 0;right: 0;
+	height: 100vh;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	min-height: rem(700px);
+
+	@include fix {
+		width: 60%;
+	}
+
+	@include tablets {
+		width: 100%;
+		text-align: center;
+	} 
+
+	@include mobile {
+		height: 100%;
+		padding: rem(40px) rem(30px);
+	}
+
+
+}
+
+
+
+.team__accordeon-main{
+	display: flex;
+	margin-top: rem(20px);
+	height: 0;
+	overflow:hidden;
+	justify-content: center;
+	align-items: center;
+
+	@include tablets {
+		flex-direction: column;
+		text-align: center;
+		margin-bottom: rem(35px);
+	}
+}
+
+.team__accordeon-block_active{
+	transition: 0.5s;
+	.team__accordeon-main{
+		transition: 0.5s;
+		height: 100%;
+		overflow:visibility;
+	}
+}
+
+
+
+.team__accordeon-block{
+	margin: rem(20px) 0;
+}
+
+
+.team__accordeon-img{
+	margin: 0 rem(25px);
+
+	@include tablets {
+		margin: rem(5px) auto rem(25px) auto;
+	}
+}
+
+
+.team__accordeon-name{
+	font-family: Gagalin;
+	color:#fff;
+	font-size: rem(16px);
+	cursor: pointer;
+	position: relative;
+
+	&::before{
+		content:'';
+		position: absolute;
+		border:rem(8px) solid transparent;
+		border-top-color: #F7AE3B;
+		bottom: rem(-4px);
+		left: rem(-25px);
+	}
+}
+
+
+
+
+.team__accordeon-title{
+	font-family: Ubuntu-B;
+	font-size:rem(14px);
+	color: white;
+	margin-bottom: rem(10px);
+}
+
+
+.team__accordeon-comment{
+	font-family: Ubuntu-Light;
+	font-size:rem(14px);
+	color: white;
+	line-height: rem(23px);
+}
+
+
+
+
+.accordeon-2__img{	
+	width: rem(100px);
+	height: rem(100px);
+	border-radius: 50%;
+	object-fit: cover;
+	object-position: center;
+}
+
+
+
+.team__accordeon-text{
+	max-width: rem(200px);
+}
+

@@ -1,0 +1,155 @@
+
+.menu-sec{
+	background:transparent url('../img/menu_bg.jpg') center center no-repeat;
+	background-size: cover;
+	position: relative;
+}
+
+
+
+
+
+
+.section__title_white{
+	color: white;
+	margin: 0;
+	position: absolute;
+	top: rem(150px);left: rem(100px);
+}
+
+
+
+.accordeon-2{
+	position: absolute;
+	top: 0;right: 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+
+.accordeon-2__list{
+	display:flex;
+}
+
+
+.accordeon-2__box{
+	width: rem(80px);
+	height: 100vh;
+	background:transparent url('../img/ac_1.jpg') left top no-repeat;
+	background-size: cover;
+	position: relative;
+	display:flex;
+	justify-content: center;
+	align-items: flex-end;
+	min-height: rem(700px);
+	padding-bottom: rem(40px);
+
+	&::before{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(8,8,8,0.65);
+		left: 0; top: 0;
+	}
+
+	@include tablets {
+		min-height: rem(700px);
+		max-height: 100vh;
+		width: rem(40px);
+	}
+
+}
+
+
+.accordeon-2__headline{
+	color: white;
+	z-index: 0;
+	transform: rotate(180deg);
+	font-family: gagalin;
+	font-size:rem(40px);
+	writing-mode:vertical-lr;
+
+	@include tablets {
+		font-size:rem(20px);
+	}
+}
+
+
+
+
+.accordeon-2__text{
+	width: 0vw;
+	visibility: hidden;
+	display:none;
+	height: 100vh;
+	background-color: rgba(59,59,59,0.8);
+	justify-content: center;
+	min-height: rem(700px);
+
+	@include tablets {
+		min-height: rem(700px);
+		max-height: 100vh;
+
+	}
+}
+
+
+.paragraph{
+	font-size: rem(14px);
+	color:white;
+	font-family: ubuntu-light;
+	line-height: rem(24px);
+}
+
+
+.accordeon-2__paragraph{
+	padding: rem(100px) rem(50px);
+	overflow:hidden;
+
+
+	@include tablets {
+		padding: rem(20px) rem(8px);
+		text-align: center;
+	}
+}
+
+
+
+
+.accordeon-2__list_active{
+	.accordeon-2__text{
+		width: 100%;
+		max-width: rem(540px);
+		visibility: visible;
+		display:flex;
+
+		@include tablets {
+			padding: rem(50px) rem(20px) rem(20px ) rem(20px );
+		}
+
+	}
+}
+
+
+.accordeon-2__list:nth-child(2){
+	.accordeon-2__box{
+		background:transparent url('../img/acc-2.jpg') left top no-repeat;
+		background-size: cover;
+	}
+}
+
+.accordeon-2__list:nth-child(3){
+	.accordeon-2__box{
+		background:transparent url('../img/ac_3.jpg') left top no-repeat;
+		background-size: cover;
+	}
+}
+
+
+
+
+
+
+
+

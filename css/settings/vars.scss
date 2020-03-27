@@ -1,0 +1,42 @@
+
+
+@function rem($px){
+	@return $px / 16px + 0rem;
+}
+
+
+
+@mixin fix{
+	@media screen and(max-width:950px){
+		@content
+	}
+}
+
+
+
+@mixin tablets{
+	@media screen and(max-width:768px){
+		@content
+	}
+}
+
+
+@mixin mobile{
+	@media screen and(max-width:480px){
+		@content
+	}
+}
+
+
+
+
+$container: rem(940px);
+
+
+
+
+$yellow: #FFAB3F;
+$orange: #F15224;
+$gray:#2F3234;
+
+

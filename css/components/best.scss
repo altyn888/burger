@@ -1,0 +1,118 @@
+
+.best{
+	background: url('../img/sec_2__bg.jpg') no-repeat center center;
+	background-size: cover;
+	display:flex;
+	align-items: center;
+}
+
+
+.best__cont{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	min-height: rem(700px);
+	max-height: 100vh;
+	
+	@include mobile {
+		height: 100%;
+		align-items: center;
+	}
+}
+
+
+
+.section__title_black{
+	color:$gray;
+	margin-bottom: rem(60px);
+
+	@include mobile {
+		margin-bottom: rem(35px);
+	}
+}
+
+
+
+.features{
+	display:flex;
+
+	@include mobile {
+		flex-direction: column;
+	}
+}
+
+
+.features__el{
+	display:flex;
+	flex-direction: column;
+	width: 33.33%;
+	margin: 0 rem(20px);
+
+	@include mobile {
+		flex-direction: row;
+		width: 100%;
+		margin: 0 0 rem(20px) 0;
+		text-align: left;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+.features__img{
+	margin-bottom: rem(30px);
+	
+	@include mobile {
+		width:rem(80px);
+		margin:0 rem(20px) 0 0;
+	}
+}
+
+
+
+.features__title{
+	font-family: Lifehack;
+	font-size: rem(24px);
+	line-height: rem(30px);
+	color:$gray;
+	margin-bottom: rem(15px);
+}
+
+
+.features__paragraph{
+	font-family: Ubuntu-Regular;
+	font-size:rem(14px);
+	line-height: rem(24px);
+	color:$gray;
+}
+
+
+
+.best__icon{
+	font-size: rem(90px);
+}
+
+
+
+
+
+
+
+.icon-meat{
+	@include mobile {
+		font-size: rem(80px);
+	}
+}
+
+.icon-hand{
+	@include mobile {
+		font-size: rem(90px);
+	}
+}
+
+.icon-natural{
+	@include mobile {
+		font-size: rem(76px);
+	}
+}
