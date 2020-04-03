@@ -10,51 +10,64 @@
 	<script src="script/script.js" defer=""></script>  
 	<!-- defer -- скрипт запускается только после HTML кода -->
 </head>
-<body >
+<body>
 	
 	<div class="wrapper">
 		<div class="mainContent">
+
+
 			<section class="section hero">
 				<div class="container ">
+					
 					<header class="header">
+			
 						<svg class="logo">
 							<use xlink:href="./icon/sprite.svg#logo"></use>
 						</svg>
+
 						<div class="header__btns">
+							
 							<nav class="menu">
 								<ul class="menu__list">
-									<li class="menu__item"><a href="" class="menu__link">О нас</a></li>
+									<li class="menu__item fix-delete"><a href="" class="menu__link">О нас</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Бургеры</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Команда</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Меню</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Как мы работаем</a></li>
+									<li class="menu__item fix-delete"><a href="" class="menu__link">Как мы работаем</a></li>
 									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
 								</ul>
 							</nav>
 							<a href="" class="btn header__btn">Заказать</a>
-							<a href="" class="gamburger"><span class="gamburger__line"></span></a>
+							<a href="" class="gamburger gamburger_visible" id="gamburger"><span class="gamburger__line"></span></a>
+
 						</div>
 					</header>
+
 					<div class="hero__content">
+
 						<div class="hero__img">
 							<img src="img/burger.png" class="hero__img-el">
 							<svg class="drops">
 								<use xlink:href="./icon/sprite.svg#drops"></use>
 							</svg>
 						</div>
+						
 						<div class="hero__text">
 							<h1 class="section__title hero__title">Мы делаем</h1>
 							<h3 class="hero__desc">натуральные бургеры</h3>
 						</div>
 					</div>
+					
 				</div>
-				<a href="" class="arrow"><i class="icon-arrow-scroll"></i></a>
+				<a href="" class="arrow"><i class="icon-arrow-scroll hero__arrow-scroll"></i></a>
 			</section>
+
 			<section class="section best">
 				<div class="container best__cont">
-					<h2 class="section__title section__title_black">Мы лучшшие</h2>
+					<h2 class="section__title section__title_black">Мы лучшие</h2>
 					<ul class="features">
+						
 						<li class="features__el">
 							<div class="features__img"><i class="icon-meat best__icon"></i></div>
 							<div class="teatures__text">
@@ -62,6 +75,7 @@
 								<p class="features__paragraph">Lorem ipsum  obcaecati inventore eos est quae blanditiis?</p>
 							</div>
 						</li>
+
 						<li class="features__el">
 							<div class="features__img"><i class="icon-hand best__icon"></i></div>
 							<div class="teatures__text">
@@ -69,6 +83,7 @@
 								<p class="features__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit nulla obcaecati inventore eos est quae blanditiis?</p>
 							</div>
 						</li>
+
 						<li class="features__el">
 							<div class="features__img"><i class="icon-natural best__icon"></i></div>
 							<div class="teatures__text">
@@ -76,15 +91,230 @@
 								<p class="features__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus id harum laborum, odit?</p>
 							</div>
 						</li>
+
 					</ul>
+
 				</div>
 			</section>
+			
+			<section class="section slider" id="slider_1">
+				
+				<div class="slider__arrow-block" >
+					<a href="" class="slider__arrow-box slider__arrow-box_left" data-vector="prev">
+						<i class="slider__arrow icon-arrow-scroll"></i>
+					</a>
+				</div>
+					
+				<div class="slider-cont">
+					<ul class="slider-list">	
+						<li class="slider__wrap">
+							
+							<div class="slider__img-block">
+								<img src="img/burgers-slider/black-burger.png">
+
+								<div class="kkal-box">
+									<i class="icon-kkal">
+										<span class="kkal-digit">1200</span>
+									</i>
+									<span class="kkal">ккал</span>
+								</div>
+
+								<a class="composition-box">
+									<i class="icon-burger"></i>
+									<span class="composition">состав</span>
+
+									<ul class="composition-drop">
+										<li class="composition-drop__el">
+											<i class="icon-beef composition-icon"></i>
+											<div class="composition-name paragraph">Говядина</div>
+											<div class="composition-weigh paragraph">300г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-buns composition-icon"></i>
+											<div class="composition-name paragraph">Булочки</div>
+											<div class="composition-weigh paragraph">100г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-salad composition-icon"></i>
+											<div class="composition-name paragraph">Зелень</div>
+											<div class="composition-weigh paragraph">70г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-sauce composition-icon"></i>
+											<div class="composition-name paragraph">Соус</div>
+											<div class="composition-weigh paragraph">150г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cucumber composition-icon"></i>
+											<div class="composition-name paragraph">Овощи</div>
+											<div class="composition-weigh paragraph">200г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cheese composition-icon"></i>
+											<div class="composition-name paragraph">Сыр</div>
+											<div class="composition-weigh paragraph">80г</div> 
+										</li>
+									</ul>
+								</a>
+							</div>
+
+							<div class="slider__main-block">
+								<h2 class="section__title section__title_white slider__title">dark beef burger</h2>
+								<p class="paragraph sliter__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+								<div class="slider__order">
+									<div class="price-box">
+										<span class="price">500</span>
+										рублей
+									</div>
+									<a href="" class="btn slider__btn">заказать</a>
+								</div>
+							</div>
+						</li>
+						
+						<li class="slider__wrap">
+							
+							<div class="slider__img-block ">
+								<img src="img/burgers-slider/Spicy_Shrimp_Burger.png">
+
+								<div class="kkal-box">
+									<i class="icon-kkal">
+										<span class="kkal-digit">1000</span>
+									</i>
+									<span class="kkal">ккал</span>
+								</div>
+
+								<a class="composition-box">
+									<i class="icon-burger"></i>
+									<span class="composition">состав</span>
+
+									<ul class="composition-drop">
+										<li class="composition-drop__el">
+											<i class="icon-beef composition-icon"></i>
+											<div class="composition-name paragraph">Говядина</div>
+											<div class="composition-weigh paragraph">300г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-buns composition-icon"></i>
+											<div class="composition-name paragraph">Булочки</div>
+											<div class="composition-weigh paragraph">100г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-salad composition-icon"></i>
+											<div class="composition-name paragraph">Зелень</div>
+											<div class="composition-weigh paragraph">70г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-sauce composition-icon"></i>
+											<div class="composition-name paragraph">Соус</div>
+											<div class="composition-weigh paragraph">150г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cucumber composition-icon"></i>
+											<div class="composition-name paragraph">Овощи</div>
+											<div class="composition-weigh paragraph">200г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cheese composition-icon"></i>
+											<div class="composition-name paragraph">Сыр</div>
+											<div class="composition-weigh paragraph">80г</div> 
+										</li>
+									</ul>
+								</a>
+							</div>
+
+							<div class="slider__main-block">
+								<h2 class="section__title section__title_white slider__title">Spicy Shrimp Burger</h2>
+								<p class="paragraph sliter__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+								<div class="slider__order">
+									<div class="price-box">
+										<span class="price">700</span>
+										рублей
+									</div>
+									<a href="" class="btn slider__btn">заказать</a>
+								</div>
+							</div>
+						</li>
+
+						<li class="slider__wrap">
+							
+							<div class="slider__img-block ">
+								<img src="img/burgers-slider/Chiken_burger.png" class="chiken-img">
+
+								<div class="kkal-box">
+									<i class="icon-kkal">
+										<span class="kkal-digit">900</span>
+									</i>
+									<span class="kkal">ккал</span>
+								</div>
+
+								<a class="composition-box">
+									<i class="icon-burger"></i>
+									<span class="composition">состав</span>
+
+									<ul class="composition-drop">
+										<li class="composition-drop__el">
+											<i class="icon-beef composition-icon"></i>
+											<div class="composition-name paragraph">Говядина</div>
+											<div class="composition-weigh paragraph">300г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-buns composition-icon"></i>
+											<div class="composition-name paragraph">Булочки</div>
+											<div class="composition-weigh paragraph">100г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-salad composition-icon"></i>
+											<div class="composition-name paragraph">Зелень</div>
+											<div class="composition-weigh paragraph">70г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-sauce composition-icon"></i>
+											<div class="composition-name paragraph">Соус</div>
+											<div class="composition-weigh paragraph">150г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cucumber composition-icon"></i>
+											<div class="composition-name paragraph">Овощи</div>
+											<div class="composition-weigh paragraph">200г</div> 
+										</li>
+										<li class="composition-drop__el">
+											<i class="icon-cheese composition-icon"></i>
+											<div class="composition-name paragraph">Сыр</div>
+											<div class="composition-weigh paragraph">80г</div> 
+										</li>
+									</ul>
+								</a>
+							</div>
+
+							<div class="slider__main-block">
+								<h2 class="section__title section__title_white slider__title">Chiken burger</h2>
+								<p class="paragraph sliter__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
+								<div class="slider__order">
+									<div class="price-box">
+										<span class="price">450</span>
+										рублей
+									</div>
+									<a href="" class="btn slider__btn">заказать</a>
+								</div>
+							</div>
+						</li>
+					</ul>	
+				</div>
+
+				<div class="slider__arrow-block " >
+					<a href="" class="slider__arrow-box slider__arrow-box_right" data-vector="next">
+						<i class="slider__arrow icon-arrow-scroll"></i>
+					</a>
+				</div>
+			</section>
+
 			<section class="section team">
 				<div class="team__wrap">
 					<div class="team__content">
 						<h2 class="team__title section__title">Команда</h2>
 						<ul class="team__accordeon">
-							<li class="team__accordeon-block team__accordeon-block_active">
+
+							<li class="team__accordeon-block team__accordeon-block_active" >
 								<a href="" class="team__accordeon-name">Дэниэл Редклиф</a>
 								<div class="team__accordeon-main team__accordeon_1">
 									<div class="team__accordeon-img"><img class="accordeon-2__img" src="img/aphex.jpg"></div>
@@ -94,6 +324,8 @@
 									</div>
 								</div>
 							</li>
+
+							
 							<li class="team__accordeon-block ">
 								<a href="" class="team__accordeon-name">Дэниэл Редклиф</a>
 								<div class="team__accordeon-main team__accordeon_1">
@@ -104,6 +336,7 @@
 									</div>
 								</div>
 							</li>
+
 							<li class="team__accordeon-block ">
 								<a href="" class="team__accordeon-name">Дэниэл Редклиф</a>
 								<div class="team__accordeon-main team__accordeon_1">
@@ -114,6 +347,7 @@
 									</div>
 								</div>
 							</li>
+
 							<li class="team__accordeon-block ">
 								<a href="" class="team__accordeon-name">Дэниэл Редклиф</a>
 								<div class="team__accordeon-main team__accordeon_1">
@@ -124,12 +358,16 @@
 									</div>
 								</div>
 							</li>
+
 						</ul>
 					</div>
 				</div>
 			</section>
+
 			<section class="section menu-sec ">
-				<h2 class="section__title section__title_white">Меню</h2>
+
+				<h2 class="section__title section__title_white menu__title">Меню</h2>
+
 				<ul class="accordeon-2">
 					<li class="accordeon-2__list accordeon-2__list_active" >
 						<a href="" class="accordeon-2__box">
@@ -141,6 +379,7 @@
 							</p>
 						</div>
 					</li>
+
 					<li class="accordeon-2__list " >
 						<a href="" class="accordeon-2__box">
 							<h4 class="accordeon-2__headline">Вегетарианское</h4>
@@ -151,6 +390,7 @@
 							</p>
 						</div>
 					</li>
+
 					<li class="accordeon-2__list " >
 						<a href="" class="accordeon-2__box">
 							<h4 class="accordeon-2__headline">Диетическое</h4>
@@ -163,8 +403,10 @@
 					</li>
 				</ul>				
 			</section>
+
 			<section class="section reviews">
 				<ul class="reviews__wrap">
+
 					<li class="reviews__el reviews__el_1">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -174,6 +416,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li class="reviews__el reviews__el_2">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -183,6 +426,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li class="reviews__el reviews__el_3">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -192,6 +436,8 @@
 							</div>
 						</div>
 					</li>
+
+
 					<li class="reviews__el reviews__el_4">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -201,6 +447,8 @@
 							</div>
 						</div>
 					</li>
+
+
 					<li class="reviews__el reviews__el_5">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -210,6 +458,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li class="reviews__el reviews__el_6">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -219,6 +468,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li class="reviews__el reviews__el_7">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -228,6 +478,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li class="reviews__el reviews__el_8">
 						<div class="reviews__item">
 							<h2 class="reviews__headline">Константин спилберг</h2>
@@ -237,80 +488,99 @@
 							</div>
 						</div>
 					</li>
+
 				</ul>
 			</section>
+
 			<section class="section form">
+				
 				<div class="container form__cont">
+					
 					<h2 class="section__title form__title">Закажите доставку</h2>
+					
 					<form class="form__main">
+
 						<div class="form__left">
 							<div class="form__row">
 								<label class="form__box">
 									<h4 class="form__headline">Имя</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="name" required>
+									<span class="error"></span>
 								</label>
 								<label class="form__box">
 									<h4 class="form__headline">Телефон</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" id="phone" name="phone" required>
+									<span class="error"></span>
 								</label>
 							</div>
 							<div class="form__row">
 								<label class="form__box">
 									<h4 class="form__headline">Улица</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="street" required>
+									<span class="error"></span>
 								</label>
 							</div>
 							<div class="form__row">
 								<label class="form__box">
 									<h4 class="form__headline">Дом</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="home" required>
+									<span class="error"></span>
 								</label>
 								<label class="form__box">
 									<h4 class="form__headline">Корпус</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="body">
 								</label><label class="form__box">
 									<h4 class="form__headline">Квартира</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="room">
 								</label>
 								<label class="form__box floor">
 									<h4 class="form__headline">Этаж</h4>
-									<input type="text" class="form__el">
+									<input type="text" class="form__el" name="floor">
 								</label>
 							</div>
 						</div>
+
 						<div class="form__right">
 							<div class="form__row">
 								<label class="form__box">
 									<h4 class="form__headline">Комментарий</h4>
-									<textarea class="form__textarea form__el"></textarea>
+									<textarea class="form__textarea form__el" name="comment" required></textarea>
 								</label>
 							</div>
 								<label class="form__box_radio form__row form__btns">
 									<label class="form__radio">
-										<input type="radio" class="radio-inp" name="radio-inp">
+										<input type="radio" class="radio-inp" name="pay" value="+">
 										<span class="fake-radio"></span>
 										<h4 class="form__headline form__headline_mb">Потребуется сдача</h4>
 									</label>
 									<label class="form__radio">
-										<input type="radio" class="radio-inp" name="radio-inp" checked="">
+										<input type="radio" class="radio-inp" name="pay" value="-" checked="">
 										<span class="fake-radio"></span>
 										<h4 class="form__headline form__headline_mb">Оплата по карте</h4>
 									</label>
 								</label>	
 								<label class="form__row form__radio form__btns">
-									<input type="checkbox" class="radio-inp checkbox-inp">
+									<input type="checkbox" class="radio-inp checkbox-inp" name="call">
 										<span class="fake-checkbox"></span>
 										<h4 class="form__headline form__headline_mb">Не перезванивать</h4>
 								</label>
+
 								<div class="form__row form__btns">
-									<button class="btn" type="submit">Заказать</button>
+									<button class="btn" id="send-btn" type="submit">Заказать</button>
 									<input type="reset" value="Очистить" class="reset">
 								</div>
+
 						</div>
-					</form>	
+						
+					</form>			
+
 				</div>
 			</section>
+
 			<section class="section contact">
+
+				<div id="map"></div>
+
 				<footer class="footer">
 					<div class="container footer__cont">
 						<div class="footer__box">
@@ -328,8 +598,22 @@
 					</div>
 				</footer>
 			</section>
+
+ 			
 		</div>
+		<ul class="menu-drop">
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">О нас</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Бургеры</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Команда</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Меню</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Отзывы</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Как мы работаем</a></li>
+			<li class="menu-drop__item"><a href="" class="menu-drop__link">Контакты</a></li>	
+		</ul>
 	</div>
+
+	
+
 	<ul class="pagination">
 		<a href="" class="pag__point"></a>
 		<a href="" class="pag__point"></a>
@@ -341,6 +625,21 @@
 		<a href="" class="pag__point"></a>
 		<a href="" class="pag__point"></a>
 	</ul>	
+
+
+	<div class="modal-reviews">
+		<div class="modal-reviews__wrap">
+			<span class="close"></span>
+			<h3 class="h_modal">&</h3>
+			<p class="t_modal">@</p>
+		</div>
+	</div>
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAD-N55uT4bDIwV7xqmwUvUvmUgohgWcBE&callback=initMap"
+    async defer></script>
+	
 <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+	
 </body>
 </html>

@@ -4,6 +4,10 @@
 	background-size: cover;
 	display:flex;
 	align-items: center;
+
+	@include tablets {
+		background:transparent url('../img/sec_2__bg_tablet.jpg') no-repeat center center;
+	}
 }
 
 

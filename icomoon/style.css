@@ -39,7 +39,6 @@
 }
 .icon-burger:before {
   content: "\e903";
-  color: #fff;
 }
 .icon-cheese:before {
   content: "\e904";
@@ -61,7 +60,6 @@
 }
 .icon-kkal:before {
   content: "\e90f";
-  color: #fff;
 }
 .icon-meat:before {
   content: "\e931";

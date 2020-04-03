@@ -219,6 +219,7 @@
 	border-radius:3px;
 	background-color: #fff;
 	position: relative;
+	transition: 0.2s;
 }
 
 .radio-inp:checked + .fake-radio::before{
@@ -235,6 +236,26 @@
 .radio-inp{
 	display:none;
 }
+
+
+
+
+.form__box{
+	position: relative;
+}
+
+.error{
+	display:none;
+	position: absolute;
+	width: rem(10px); height: rem(10px);
+	background-color: red;
+	top: 50%; left: rem(-15px);
+	transform:translateY(-50%);
+	border-radius:50%;
+}
+
+
+
 
 
 

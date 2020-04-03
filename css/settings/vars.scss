@@ -28,6 +28,12 @@
 }
 
 
+@mixin pag_fix{
+	@media screen and(max-width:1250px){
+		@content
+	}
+}
+
 
 
 $container: rem(940px);

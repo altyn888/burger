@@ -1,0 +1,336 @@
+
+.slider{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(180deg, rgba(249,180,59,1) 0%, #D17927 50%, rgba(249,180,59,1) 100%);
+	min-width: rem(290px);
+}
+
+
+.slider__wrap{
+	height: rem(470px);
+	margin: 0;
+	display:flex;
+	justify-content: space-between;
+	flex:0 0 100%;
+
+	@include tablets {
+		flex-direction: column;
+		min-height: rem(700px);
+		text-align: center;
+		justify-content: center;
+	}
+}
+
+
+.slider-list{
+	display:flex;
+	transition: 0.6s;
+}
+
+.slider-cont{
+	overflow:hidden;
+	width: 95%;
+	max-width: $container;
+}
+
+
+	/* ARROWS */
+
+
+.slider__arrow-block{
+	height: 100%;
+	display:flex;
+	align-items: center;
+	position: relative;
+}
+
+
+.slider__arrow-box{
+	padding: rem(18px) rem(10px);
+
+	@include mobile {
+		position: absolute;
+		z-index: 100;
+	}
+}
+
+.slider__arrow-box_left{
+	transform: rotate(90deg);
+}
+
+.slider__arrow-box_right{
+	transform: rotate(-90deg);
+	@include mobile {
+		right: 0;		
+	}
+}
+
+.slider__arrow{
+	display:block;
+	animation: arr_slider 2s linear infinite;
+}
+
+
+@keyframes arr_slider{
+	0%{
+		transform:translateY(0px);
+	}
+	33%{
+		transform:translateY(rem(-10px));
+	}
+	66%{
+		transform:translateY(rem(10px));
+	}
+	100%{
+		transform:translateY(0px);
+	}
+}
+
+
+
+	/* CONTENT */
+
+
+
+
+/* IMG CONTENT */
+
+
+
+.slider__img-block{
+	width: 48%;
+	position: relative;
+	display:flex;
+	justify-content: center;
+	align-items: center;
+
+	@include tablets {
+		width: 100%;
+		align-items: flex-end;
+		height: 45%;
+	}
+
+	@include mobile {
+		width: 95%;
+		margin: 0 auto;
+	}
+}
+
+
+.slider__main-block{
+	width: 48%;
+	display:flex;
+	flex-direction: column;
+
+	@include tablets {
+		width: 100%;
+		height: 45%;
+	}
+}
+
+
+
+.kkal-box{
+	position: absolute;	
+	bottom: 0;left: 0;
+	width: rem(90px);
+	height: rem(90px);
+	font-family: gagalin;
+	color: rgba(255,255,255, 0.5);
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	transition: 0.5s;
+
+	@include tablets {
+		bottom: auto; left:auto;
+		top: 0; right: 0;
+	}
+
+	&:hover{
+		color:white;
+	}
+
+	.icon-kkal{
+		font-size:rem(60px);
+		position: relative;
+	}
+	.kkal{font-size:rem(14px);}
+
+	.kkal-digit{
+		font-size:rem(20px);
+		position: absolute;
+		font-family: gagalin;
+		top: 63%; left: 50%;
+		transform:translate(-50%, -50%);
+	}
+}
+
+.composition-box{
+	position: absolute;
+	top: 0; left: 0;
+	display:block;
+	display:flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	width: rem(90px);
+	height: rem(90px);
+	background-color: #D67D2D;
+	border-radius: rem(5px);
+	font-family: gagalin;
+	color:white;
+
+	.icon-burger{
+		font-size: rem(45px);
+	}
+
+	.composition{font-size:rem(14px);}
+
+}
+
+
+
+
+/* MAIN CONTENT */
+
+
+.sliter__text{
+	font-weight: bold;
+	margin-bottom: rem(40px);
+
+	@include tablets {
+		margin-bottom: rem(10px);
+	}
+}
+
+.slider__title{
+	@include tablets {
+		margin-bottom: rem(10px);
+	}
+	@include mobile {
+		max-width: 260px;
+		margin: 0 auto;
+	}
+}
+
+
+.slider__order{
+	display:flex;
+
+	@include tablets {
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+
+.price-box{
+	margin-right: rem(30px);
+	font-family: gagalin;
+	color:$orange;
+	font-size:rem(30px);
+
+	@include mobile {
+		font-size:rem(20px);
+	}
+}
+
+
+.price{
+	font-size:rem(60px);
+
+	@include mobile {
+		font-size:rem(40px);
+	}
+}
+
+
+.slider__btn{
+	align-self:flex-end;
+}
+
+
+
+
+
+/* BURGER-DROP */
+
+
+.composition-box:hover{
+	background-color: $orange;
+	transition: 0.4s;
+	.composition-drop{
+		display:block;
+	}
+}
+
+
+
+
+
+
+.composition-drop{
+	position: absolute;
+	top: 0;right: 0;
+	transform:translateX(100%);
+	background-color: rgba(255,255,255,0.9);
+	border-radius:5px;
+	width: rem(270px);
+	display:none;
+
+	@include mobile {
+		top: auto; right: auto;
+		bottom: 0; left: 0;
+		transform:translateX(0%);
+		transform:translateY(100%);
+	}
+}
+
+
+.composition-drop__el{
+	display:flex;
+	padding: 0 rem(20px) ;
+	margin-bottom: rem(15px);
+	align-items: center;
+	justify-content: space-between;
+
+	&:last-child{margin-bottom: rem(20px)}
+	&:first-child{margin-top: rem(20px)}
+}
+
+
+.composition-name{
+	font-weight: bold;
+	color: #222;
+	margin-right: auto;
+}
+
+
+.composition-weigh{
+	color:#222;
+}
+
+
+.composition-icon{
+	margin-right: rem(20px);
+	font-size:rem(40px);
+	width: rem(50px);
+}
+
+.icon-buns{
+	font-size:rem(35px);
+	margin-left: rem(-7px);
+	margin-right: rem(27px);
+}
+
+
+.chiken-img{
+	width: 86%;
+	@include tablets {
+	padding-bottom: rem(20px);
+	}
+}

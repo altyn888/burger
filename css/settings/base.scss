@@ -1,4 +1,4 @@
-*{margin: 0;padding: 0;box-sizing: border-box;}
+*{margin: 0;padding: 0;box-sizing: border-box; }
 
 
 
@@ -6,11 +6,19 @@ body{
 	position: relative;
 }
 
+.wrapper{
+	overflow-x: hidden; 
+	position: relative;
+}
+
 .pagination{
 	position: fixed;
 	top: rem(90px);
-	right: rem(40px);
-	padding: rem(10px);
+	right: rem(20px);
+
+	@include pag_fix {
+		display:none;
+	}
 }
 
 .pag__point{
@@ -45,9 +53,12 @@ body{
 }
 
 
+
+
 .section{
 	min-height: rem(700px);
 	height: 100vh;
+	min-width: rem(320px);
 }
 
 

@@ -1,11 +1,12 @@
 .contact{
 	background:transparent url('../img/contact__bg.jpg') center center no-repeat;
 	background-size: cover;
-	color: #fff;
+	color: #000;
 	font-family: Ubuntu-Light;
 	font-size: rem(14px);
 	font-weight: bold;
 	position: relative;
+	min-height: rem(350px);
 }
 
 
@@ -94,9 +95,11 @@
 .phone{
 	display:flex;
 	align-items: center;
+	width: rem(180px);
 
 	@include mobile {
 		justify-content: center;
+		margin: 0 auto;
 	}
 }
 
@@ -108,4 +111,17 @@
 	margin-bottom: rem(3px);
 	margin-left: rem(5px);
 	color: #E45028;
+}
+
+
+
+
+
+
+/* MAP */
+
+
+
+#map{
+	width: 100%; height: 100%;
 }

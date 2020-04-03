@@ -34,11 +34,14 @@
 }
 
 
+.team__content{
+	min-height: rem(650px);
+}
 
 .team__accordeon-main{
 	display: flex;
 	margin-top: rem(20px);
-	height: 0;
+	max-height: 0;
 	overflow:hidden;
 	justify-content: center;
 	align-items: center;
@@ -51,11 +54,18 @@
 }
 
 .team__accordeon-block_active{
-	transition: 0.5s;
+	transition-timing-function: linear;
 	.team__accordeon-main{
-		transition: 0.5s;
-		height: 100%;
+		transition: 1s;
+		max-height: 400px;
 		overflow:visibility;
+	}
+
+	.team__accordeon-name{
+		&::before{
+			transform: rotate(0deg);
+			bottom: rem(-4px);
+		}
 	}
 }
 
@@ -81,14 +91,17 @@
 	font-size: rem(16px);
 	cursor: pointer;
 	position: relative;
+	user-select:none;
 
 	&::before{
 		content:'';
 		position: absolute;
 		border:rem(8px) solid transparent;
 		border-top-color: #F7AE3B;
-		bottom: rem(-4px);
+		bottom: rem(4px);
 		left: rem(-25px);
+		transition:0.5s;
+		transform: rotate(180deg);
 	}
 }
 

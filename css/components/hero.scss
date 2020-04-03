@@ -49,7 +49,7 @@
 	}
 }
 
-.icon-arrow-scroll{
+.hero__arrow-scroll{
 	display:block;
 	transition: 1s;
 	animation: translate 2s ease infinite;
@@ -57,138 +57,9 @@
 
 
 
-/* HEADER */
-
-
-.header{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-
-.header__btns{
-	display:flex;
-	align-items: center;
-}
-
-
-.logo{
-	width: rem(100px);
-	height: rem(100px);
-}
-
-
-
-.menu__list{
-	display:flex;
-	align-items: center;
-}
-
-
-$items-margin:rem(7px);
-
-.menu__item{
-	display:flex;
-	align-items: center;
-	margin-right: $items-margin;
-
-	&::before{
-		content:'';
-		display:block;
-		width: rem(4px);height: rem(4px);
-		border-radius: 50%;
-		background: currentColor;
-		margin: $items-margin;
-
-		@include tablets {
-			display:none;
-		}
-	}
-
-	&:first-child::before{
-		display:none;
-	}
-	
-
-
-}
-
-
-.menu__link{
-	margin-left: $items-margin;
-	text-transform: uppercase;
-	font-size:rem(13px);
-	font-family: Ubuntu;
-	position: relative;
-
-	&::before{
-		transition: 0.3s;
-		content:'';
-		width: 100%;
-		height: rem(2px);
-		position: absolute;
-		background-color: #fff;
-		bottom: rem(-5px);
-		transform: scaleX(0);
-	}
-
-	&:hover::before{
-		transform: scaleX(1);
-	}
-
-	@include tablets {
-		display:none;
-	}
-}
-
-
-.header__btn{
-	margin-left: rem(10px);
-}
-
-
-.gamburger{
-	padding: rem(20px) rem(10px);
-	margin-left: rem(25px);
-	display:none;
-
-	@include tablets {
-		display:block;
-	}
-}
-
-
-.gamburger__line{
-	display:block;
-	width: rem(25px);
-	height: rem(5px);
-	background-color: #fff;
-	border-radius: rem(5px);
-
-		&::after{
-			content:'';
-			display:block;
-			width: rem(25px);
-			height: rem(5px);
-			background-color: #fff;
-			border-radius: rem(5px);
-			transform: translateY(5px);
-		}
-
-		&::before{
-			content:'';
-			display:block;
-			width: rem(25px);
-			height: rem(5px);
-			background-color: #fff;
-			border-radius: rem(5px);
-			transform: translateY(-10px);
-		}
-}
-
 
 /* CONTENT */
+
 
 
 .hero__content{
@@ -196,6 +67,7 @@ $items-margin:rem(7px);
 	align-items: center;
 	justify-content: center;
 	height: 70vh;
+	min-height: 530px;
 
 	@include tablets {
 		flex-direction: column;
@@ -206,6 +78,9 @@ $items-margin:rem(7px);
 	}
 }
 
+.hero__content_active{
+	height: 100vh;
+}
 
 .hero__text{
 	width: 50%;
