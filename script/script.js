@@ -334,10 +334,9 @@ function form(){
 
 	function modal_ok(event){
 		document.querySelector('.reset').click();
-		let modal = document.querySelector('.modal-reviews');
-		let span = document.querySelector('.close');
-		let h_modal = document.querySelector('.h_modal').textContent= `${event}`;
-		let t_modal = document.querySelector('.t_modal').textContent = '';
+		let modal = document.querySelector('.modal-form');
+		let span = document.querySelector('.form__close');
+		let h_modal = document.querySelector('.modal-form__h').textContent= `${event}`;
 
 		modal.style.display= 'flex';
 
@@ -361,20 +360,20 @@ function initMap(){
 
 	var markers = [
         {	           
-            "lat": 59.942378441522514,
-            "lng": 30.301600005249043,	 
+            "lat": 51.143831,
+            "lng": 71.3998417,	 
             addres: 'addres №1'          	            
         },
 
         {	  
-            "lat": 59.937649195845786,
-            "lng": 30.324688460449238,	
+            "lat": 51.091141,
+            "lng": 71.416824,	
             addres: 'addres №2'           	           
         },
 
         {	   
-            "lat": 59.95286636109328,
-            "lng": 30.328550841430683,
+            "lat": 51.125442,
+            "lng": 71.446217,
             addres: 'addres №3'
         }
     ];
@@ -382,8 +381,8 @@ function initMap(){
 
 
 	var map = new google.maps.Map(document.getElementById('map'),{
-		center:{lat: 59.952111426420163, lng:30.30039837561037},
-		zoom: 13,
+		center:{lat: 51.1462733, lng:71.4207841},
+		zoom: 12.5,
 		disableDefaultUI: true,
 		styles: [
         {
