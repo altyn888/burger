@@ -334,3 +334,12 @@
 	padding-bottom: rem(20px);
 	}
 }
+
+
+.slider__title{
+	@include mobile {
+		font-size:rem(35px);
+		line-height: rem(38px);
+		margin-bottom: rem(10px);
+	}
+}

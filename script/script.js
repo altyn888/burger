@@ -263,35 +263,28 @@ function form(){
 	myForm.addEventListener('submit', e =>{
 		e.preventDefault();
 
-		const data = {
-			name: myForm.elements.name.value,
-			phone: myForm.elements.phone.value,
-			street: myForm.elements.street.value,
-			home: myForm.elements.home.value,
-			body: myForm.elements.body.value,
-			room: myForm.elements.room.value,
-			floor: myForm.elements.floor.value,
-			comment: myForm.elements.comment.value,
-		};
-
-		if(myForm.elements.pay.value == '+'){
-			data['pay'] = 'наличка'
-		}else{	data['pay'] = 'по карте'}
-
-		if(myForm.elements.call.checked == true){
-			data['call'] = 'не перезванивать'
-		}else{data['call'] = 'перезвонить'}
+		var form_data = new FormData();
+		
+		form_data.append('name', myForm.elements.name.value);
+		form_data.append('phone', myForm.elements.phone.value);
+		form_data.append('comment', myForm.elements.comment.value);
+		form_data.append('comment', myForm.elements.comment.value);
+		
 
 
 		if(validateForm(myForm)){			
 
 			const xhr = new XMLHttpRequest();
 			xhr.responseType = 'json';
-			xhr.setRequestHeader('Access-Control-Allow-Headers', '*');
 			xhr.open('POST', 'https://webdev-api.loftschool.com/sendmail');
-			xhr.send(JSON.stringify(data));
+			xhr.setRequestHeader("X-Requested-With", "XMLHttpRequest");
+			xhr.send(form_data);
 			xhr.addEventListener('load', ()=>{
-				console.log(xhr.response);
+				if(xhr.response.status === 1){
+					modal_ok(xhr.response.message)
+				}else{
+					modal_ok(xhr.response.message)
+				}
 			});
 		}
 
@@ -351,6 +344,8 @@ function form(){
 		}
 	}
 }
+
+form();
 
 
 
@@ -492,6 +487,248 @@ function initMap(){
 
 
 initMap();
+
+
+
+
+
+function videoPlayer(){
+	let video;
+	let display;
+	let progress;
+	const line_1 = document.querySelector('.progress_1'); /*оснавная линия прогресс бара*/
+
+	document.querySelector('#volume').onclick = volume;
+
+	document.querySelector('.icon-play').onclick = play;
+	document.querySelector('.icon-volume').onclick = function(){
+		let volume_icon = document.querySelector('#volume');
+
+		volume_icon.value = 0;
+	}
+
+
+	video = document.querySelector('#video');
+	progress = document.querySelector('#progress');
+
+
+	video.ontimeupdate = progressUpdate;
+	progress.onclick = videoRewind;
+
+
+    /*play/pause*/
+
+    let box = document.querySelector('#play_pause');
+	let pl_pa = document.querySelector('#toogle_el');
+
+	box.onclick = function(){
+		if(box.classList == 'box play-box'){
+			play();
+		}
+		else{
+			pause();
+		}
+	}
+
+
+	function play(){
+		box.classList.add('pause-box');
+		box.classList.remove('play-box');
+
+		pl_pa.classList.remove('play');
+		pl_pa.classList.add('pause');
+
+		video.play();
+
+		document.querySelector('.modal-video').style.display = 'none';
+	}
+
+	function pause(){
+		box.classList.add('play-box');
+		box.classList.remove('pause-box');
+
+		pl_pa.classList.remove('pause');
+		pl_pa.classList.add('play');
+
+		video.pause();
+
+		document.querySelector('.modal-video').style.display = 'flex';
+	}
+
+
+	function volume(){
+		let v = this.value;
+		video.volume = v/100; /*регулируется в %*/
+	}
+
+
+	function progressUpdate(){
+		let d = video.duration; /*все время*/ 
+		let c = video.currentTime; /*текущее время*/
+		let p_value = (100 * c)/d; /*процент значения времени*/
+
+		line_1.style.width = `${p_value}%`
+	}
+
+
+	function videoRewind(e){
+		let w = this.offsetWidth; /*получаем всю ширину бара*/
+		let o = e.offsetX;		/*получаем ширину до точки, на которую мы кликнули*/ 
+
+		let d = video.duration;
+
+		pause();
+		video.currentTime = d *(o/w);
+	}
+
+}
+
+
+videoPlayer();
+
+
+
+
+
+
+
+
+
+
+function onePageScroll(){
+
+	const sections = $('.section');
+	const display = $('.mainContent');
+
+	let inScroll = false;
+
+	const perfornTransition = sectionEq =>{
+
+		if(inScroll === false){
+			inScroll = true;
+
+			const position = sectionEq * -100;
+
+			sections.eq(sectionEq).addClass("section-active").siblings().removeClass("section-active");
+
+			display.css({
+				transform: `translateY(${position}%)`
+			});
+
+			setTimeout(() =>{
+				$('.pag__point').eq(sectionEq).addClass('pagination-active').siblings().removeClass('pagination-active')
+				inScroll = false;
+			}, 600);
+		}
+	};
+
+	var wrap = document.querySelector('.wrapper');
+
+	console.log(wrap.clientHeight);
+
+	if(wrap.clientHeight <= 700){
+		inScroll = false;
+	}
+
+
+	const scrollSection = direction =>{
+
+		const activeSection = sections.filter(".section-active");
+		const nextSection = activeSection.next();
+		const prevSection = activeSection.prev();
+
+		if(nextSection.length && direction === 'next'){
+			perfornTransition(nextSection.index());
+		}
+
+		if(prevSection.length && direction === 'prev'){
+			perfornTransition(prevSection.index());
+		}
+
+
+	}
+
+	$(window).on('wheel', e =>{
+
+		const deltaY = e.originalEvent.deltaY;
+
+		if(deltaY >0){
+			scrollSection("next");
+
+		}
+
+		if(deltaY < 0){
+			scrollSection("prev");
+		}
+	});
+
+
+	/*скорл с помощью клавиш*/
+
+	$(document).on('keydown', e =>{
+
+		const tagName = e.target.tagName.toLowerCase();
+
+		if(tagName != 'input' && tagName != 'textarea'){
+			switch(e.keyCode){
+				case 38:
+				scrollSection('prev');
+				break;
+				case 40:
+				scrollSection('next');
+				break;
+			}
+		}
+
+	});
+
+
+
+
+
+	$("[data-scroll-to]").on('click', e =>{
+		e.preventDefault();
+
+		const $this = $(e.currentTarget);
+		const target = $this.attr("data-scroll-to");
+
+		perfornTransition(target);
+	});
+
+
+
+	/*toucheSwipe*/
+
+
+	$('body').swipe({
+		swipe: (event, direction) =>{
+			let scrollDirection;
+
+			if(direction === 'up'){
+				scrollDirection = 'next';
+			}
+			if(direction === 'down'){
+				scrollDirection = 'prev';
+			}
+
+			scrollSection(scrollDirection);
+
+		}
+	});
+
+
+
+
+
+
+
+
+
+}
+
+
+
+onePageScroll();
 
 
 

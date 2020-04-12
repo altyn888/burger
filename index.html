@@ -7,16 +7,18 @@
 	<link rel="stylesheet" href="icomoon/style.css">
 	<link rel="stylesheet" href="css/main.css">
 	
+	<script src="script/jquery-3.4.1.min.js" defer=""></script>   
+	<script src="script/toucheSwipe.min.js" defer=""></script>  
 	<script src="script/script.js" defer=""></script>  
 	<!-- defer -- скрипт запускается только после HTML кода -->
 </head>
 <body>
 	
 	<div class="wrapper">
-		<div class="mainContent">
+		<div class="mainContent" style="transition: 0.6s">
 
 
-			<section class="section hero">
+			<section class="section hero section-active" id="section_1">
 				<div class="container ">
 					
 					<header class="header">
@@ -29,16 +31,16 @@
 							
 							<nav class="menu">
 								<ul class="menu__list">
-									<li class="menu__item fix-delete"><a href="" class="menu__link">О нас</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Бургеры</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Команда</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Меню</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Отзывы</a></li>
-									<li class="menu__item fix-delete"><a href="" class="menu__link">Как мы работаем</a></li>
-									<li class="menu__item"><a href="" class="menu__link">Контакты</a></li>
+									<li class="menu__item fix-delete"><a href="" data-scroll-to="1" class="menu__link">О нас</a></li>
+									<li class="menu__item"><a href="" data-scroll-to="2" class="menu__link">Бургеры</a></li>
+									<li class="menu__item"><a href="" data-scroll-to="3" class="menu__link">Команда</a></li>
+									<li class="menu__item"><a href="" data-scroll-to="4" class="menu__link">Меню</a></li>
+									<li class="menu__item"><a href="" data-scroll-to="5" class="menu__link">Отзывы</a></li>
+									<li class="menu__item fix-delete"><a href="" data-scroll-to="6" class="menu__link">Как мы работаем</a></li>
+									<li class="menu__item"><a href="" data-scroll-to="8" class="menu__link">Контакты</a></li>
 								</ul>
 							</nav>
-							<a href="" class="btn header__btn">Заказать</a>
+							<a href="" data-scroll-to="7" class="btn header__btn">Заказать</a>
 							<a href="" class="gamburger gamburger_visible" id="gamburger"><span class="gamburger__line"></span></a>
 
 						</div>
@@ -60,10 +62,10 @@
 					</div>
 					
 				</div>
-				<a href="" class="arrow"><i class="icon-arrow-scroll hero__arrow-scroll"></i></a>
+				<a href="" data-scroll-to="1" class="arrow"><i class="icon-arrow-scroll hero__arrow-scroll"></i></a>
 			</section>
 
-			<section class="section best">
+			<section class="section best" id="section_2">
 				<div class="container best__cont">
 					<h2 class="section__title section__title_black">Мы лучшие</h2>
 					<ul class="features">
@@ -223,7 +225,7 @@
 							</div>
 
 							<div class="slider__main-block">
-								<h2 class="section__title section__title_white slider__title">Spicy Shrimp Burger</h2>
+								<h2 class="section__title section__title_white slider__title big_title">Spicy Shrimp Burger</h2>
 								<p class="paragraph sliter__text">Ваш старый добрый знакомый, с рубленым бифштексом из 100% говядины, тремя кусочками нежнейшего сыра эмменталь, двумя помидорами, луком, салатом и соусом гриль теперь с добавлением экзотического соуса чураско.</p>
 								<div class="slider__order">
 									<div class="price-box">
@@ -308,7 +310,7 @@
 				</div>
 			</section>
 
-			<section class="section team">
+			<section class="section team" id="section_4">
 				<div class="team__wrap">
 					<div class="team__content">
 						<h2 class="team__title section__title">Команда</h2>
@@ -364,7 +366,7 @@
 				</div>
 			</section>
 
-			<section class="section menu-sec ">
+			<section class="section menu-sec " id="section_5">
 
 				<h2 class="section__title section__title_white menu__title">Меню</h2>
 
@@ -404,7 +406,7 @@
 				</ul>				
 			</section>
 
-			<section class="section reviews">
+			<section class="section reviews" id="section_6">
 				<ul class="reviews__wrap">
 
 					<li class="reviews__el reviews__el_1">
@@ -492,7 +494,39 @@
 				</ul>
 			</section>
 
-			<section class="section form">
+			<section class="section video-sec" id="section_7">
+				<div class="container video-cont">
+					<h2 align="center" class="section__title section__title_black video-sec__title">Как мы работаем</h2>
+					<div class="video_wrap">
+						<video id="video" >
+							<source src="video/section_burger.mp4" type="video/mp4">
+						</video>
+
+						<div class="controls">
+							<a class="box play-box" id="play_pause">
+								<span class="play" id="toogle_el"></span>
+							</a>				
+
+							<a class="box box-bar" id="progress">
+								<span class="progress-bar">
+									<span class="progress_1"></span>
+								</span>
+							</a>
+
+							<a class="box volume-box">
+								<span class="icon-volume"></span>
+								<input type="range" id="volume" value="85">
+							</a>
+						</div>
+
+						<div class="modal-video">
+							<span class="icon-play"></span>
+						</div>
+					</div>		
+				</div>
+			</section>
+
+			<section class="section form" id="section_8">
 				
 				<div class="container form__cont">
 					
@@ -517,6 +551,11 @@
 								<label class="form__box">
 									<h4 class="form__headline">Улица</h4>
 									<input type="text" class="form__el" name="street" required>
+									<span class="error"></span>
+								</label>
+								<label class="form__box" style="visibility: hidden; height: 0px; width: 0px;">
+									<h4 class="form__headline">mail</h4>
+									<input type="email" class="form__el" name="to" required value="8887371@gmail.com">
 									<span class="error"></span>
 								</label>
 							</div>
@@ -577,7 +616,7 @@
 				</div>
 			</section>
 
-			<section class="section contact">
+			<section class="section contact" id="section_9">
 
 				<div id="map"></div>
 
@@ -602,28 +641,28 @@
  			
 		</div>
 		<ul class="menu-drop">
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">О нас</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Бургеры</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Команда</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Меню</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Отзывы</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Как мы работаем</a></li>
-			<li class="menu-drop__item"><a href="" class="menu-drop__link">Контакты</a></li>	
+			<li class="menu-drop__item"><a href="" data-scroll-to="1" class="menu-drop__link">О нас</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="2" class="menu-drop__link">Бургеры</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="3" class="menu-drop__link">Команда</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="4" class="menu-drop__link">Меню</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="4" class="menu-drop__link">Меню</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="6" class="menu-drop__link">Как мы работаем</a></li>
+			<li class="menu-drop__item"><a href="" data-scroll-to="7" class="menu-drop__link">Контакты</a></li>
 		</ul>
 	</div>
 
 	
 
 	<ul class="pagination">
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
-		<a href="" class="pag__point"></a>
+		<a href="" data-scroll-to="0" class="pag__point pagination-active"></a>
+		<a href="" data-scroll-to="1" class="pag__point"></a>
+		<a href="" data-scroll-to="2" class="pag__point"></a>
+		<a href="" data-scroll-to="3" class="pag__point"></a>
+		<a href="" data-scroll-to="4" class="pag__point"></a>
+		<a href="" data-scroll-to="5" class="pag__point"></a>
+		<a href="" data-scroll-to="5" class="pag__point"></a>
+		<a href="" data-scroll-to="7" class="pag__point"></a>
+		<a href="" data-scroll-to="7" class="pag__point"></a>
 	</ul>	
 
 
